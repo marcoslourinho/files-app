@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "584088663872",
+    "firebase_url": "https://coruja-58384.firebaseio.com",
+    "project_id": "coruja-58384",
+    "storage_bucket": "coruja-58384.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:584088663872:android:4132aa77e5ee2d0e",
+        "android_client_info": {
+          "package_name": "com.coruja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "584088663872-o19qoo56il85qu8fcisvjr3jvuet72tg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB74YRveO5zaYbzyM1uf31wMbOyW81uln0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
