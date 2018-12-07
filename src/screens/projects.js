@@ -57,7 +57,7 @@ export default class Projects extends Component {
             </Button>
         </Left>
         <Right>
-            <Button info bordered style={styles.projectButton} onPress={()=>{this.props.navigation.navigate("Files");}} >
+            <Button info bordered style={styles.projectButton} onPress={()=>{this.props.navigation.navigate("Files", {project: item});}} >
               <Icon name="ios-folder" /> 
             </Button>
         </Right>

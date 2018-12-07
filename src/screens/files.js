@@ -7,13 +7,17 @@ export default class ListIconExample extends Component {
         title: "Arquivos"
     }
 
+    state = {
+        project: this.props.navigation.getParam('project'),
+    }
+
   render() {
     return (
       <Container>
         <Content>
             <ListItem itemDivider>
             <Left>
-                <Text>Projeto</Text>
+                <Text>{this.state.project.nome}</Text>
             </Left>
             <Right>
                 <Button transparent success>
