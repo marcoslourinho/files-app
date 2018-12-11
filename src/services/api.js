@@ -1,7 +1,7 @@
 import {create} from 'apisauce';
 
 const api  = create({
-    baseURL: 'https://coruja-58384.firebaseio.com/',
+    baseURL: 'https://coruja-58384.firebaseio.com',
 });
 
 api.addResponseTransform(response => {

@@ -10,7 +10,8 @@ export default class Note extends Component {
   }
 
   state = {
-    note: ""
+    note: "",
+    project: this.props.navigation.getParam('project'),
   }
 
   render() {
@@ -32,7 +33,7 @@ sendNote = async () => {
 
   try {
 
-    await firebase.database().ref('projetos/ourcontrol/anotacao').push({
+    await firebase.database().ref('projetos/'+ this.state.project.nome +'/anotacao').push({
       note: this.state.note,
       date: new Date().toString(),
       status: true

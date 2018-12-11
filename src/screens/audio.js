@@ -31,6 +31,8 @@ export default class AudioExample extends Component {
       finished: false,
       audioPath: AudioUtils.DocumentDirectoryPath + '/audio_coruja.mp3',
       hasPermission: undefined,
+      project: this.props.navigation.getParam('project'),
+
     };
 
     prepareRecordingPath(audioPath){
@@ -187,13 +189,15 @@ export default class AudioExample extends Component {
       const storageRef = firebase.storage().ref('projetos/' + (new Date().toString()))
       const callback = await storageRef.put(this.state.audioPath);
 
-      await firebase.database().ref('projetos/ourcontrol/audios').push({
+      await firebase.database().ref('projetos/'+ this.state.project.nome +'/audios').push({
         url: callback.downloadURL,
         date: new Date().toString(),
         status: true,
       });
 
+      this.props.navigation.navigate('Projects');
       callback.state == "success" ? ToastAndroid.show('Áudio sincronizado com sucesso!', 5000) : ToastAndroid.show('Opa! Erro ao sincronizar!', 5000);
+      
     }
 
     localStorage = async (file) => {

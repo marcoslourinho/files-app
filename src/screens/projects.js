@@ -62,7 +62,7 @@ export default class Projects extends Component {
             </Button>
         </Right>
         </CardItem>
-      </Card>
+        </Card>
     )
 
     render(){

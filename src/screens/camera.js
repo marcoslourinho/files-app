@@ -13,7 +13,8 @@ export default class CameraView extends Component {
 
   state = {
     image: {},
-    ready_to_upload: false
+    ready_to_upload: false,
+    project: this.props.navigation.getParam('project'),
   }
 
   render() {
@@ -79,11 +80,13 @@ export default class CameraView extends Component {
       const storageRef = firebase.storage().ref('coruja/fotos/' + (new Date().toString()));
       const callback = await storageRef.put(this.state.image.path);
 
-      await firebase.database().ref('projetos/ourcontrol/fotos').push({
+      await firebase.database().ref('projetos/'+ this.state.project.nome +'/fotos').push({
         url: callback.downloadURL,
         date: new Date().toString(),
         status: true,
       });
+      
+      this.props.navigation.navigate('Projects');
 
       callback.state == "success" ?  ToastAndroid.show('Foto sincronizada com sucesso!', 5000) :  ToastAndroid.show('Opa! Erro ao sincronizar!', 5000);
 
